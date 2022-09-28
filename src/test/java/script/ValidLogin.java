@@ -29,7 +29,7 @@ public class ValidLogin extends BaseTest{
 		loginPage.clickLoginButton();
 		test.info("click on login button");
 		
-//		4. Verify that home page should be displayed
+//		4. Verify that home page is displayed
 		EnterTimeTrackPage ettPage=new EnterTimeTrackPage(driver);
 		boolean result = ettPage.verifyLogoutLinkIsDisplayed(wait);
 		Assert.assertEquals(result, true,"Home page is not displayed");

@@ -5,10 +5,4 @@
 	      <package name="script"/>
 	    </packages>
   </test>
-<!--   <test name="TestRemote"> -->
-<!-- 	  <parameter name="property" value="qa.properties"/> -->
-<!-- 	    <packages> -->
-<!-- 	      <package name="script"/> -->
-<!-- 	    </packages> -->
-<!--   </test> -->
 </suite>

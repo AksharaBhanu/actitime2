@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.time.Duration;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -32,7 +33,7 @@ public class BaseTest {
 	public WebDriver driver;
 	public WebDriverWait wait;
 	public static final String XLPATH="./data/input.xlsx";
-	public static final String REPORTPATH="./target/MyReport.html";
+	public static final String REPORTPATH="./target/AFWReport.html";
 	public static ExtentReports eReport;
 	public ExtentTest test;
 	@BeforeSuite
@@ -76,6 +77,11 @@ public class BaseTest {
 			URL remoteURL=new URL(gridURL);
 			DesiredCapabilities capabilities=new DesiredCapabilities();
 			capabilities.setBrowserName(browser);
+			
+			MutableCapabilities sauceOptions = new MutableCapabilities();
+			sauceOptions.setCapability("name", testName);
+			capabilities.setCapability("sauce:options", sauceOptions);
+			
 			driver=new RemoteWebDriver(remoteURL,capabilities);
 		}
 		else
